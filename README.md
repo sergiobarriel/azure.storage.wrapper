@@ -265,7 +265,7 @@ var secondResponse = await _azureStorageWrapper.EnumerateBlobsAsync(secondComman
 ```
 # Branch strategy
 
-```
+```mermaid
 sequenceDiagram
     autonumber
     main branch->>+feature branch: new branch
