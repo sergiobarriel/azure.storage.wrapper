@@ -263,6 +263,20 @@ var secondCommand = new EnumerateBlobs()
 
 var secondResponse = await _azureStorageWrapper.EnumerateBlobsAsync(secondCommand);
 ```
+# Branch strategy
+
+```
+sequenceDiagram
+    autonumber
+    main branch->>+feature branch: new branch
+    feature branch->>+feature branch: commit
+    feature branch->>+feature branch: push
+    feature branch-->>Github Actions: build & test
+    note over Github Actions: build-test.yml
+    feature branch->>+main branch: PR
+    main branch-->>Github Actions: build, test & deploy
+    note over Github Actions: build-test-deploy.yml
+```
 
 # Contributors / Collaborators
 
